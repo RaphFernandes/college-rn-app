@@ -39,4 +39,37 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
   },
+  drawerContent: {
+    flex: 1,
+  },
+  userInfoSection: {
+    paddingLeft: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  caption: {
+    fontSize: 14,
+    lineHeight: 14,
+  },
+  drawerSection: {
+    marginTop: 15,
+  },
+  bottomDrawerSection: {
+    marginBottom: 15,
+    borderTopColor: '#f4f4f4',
+    borderTopWidth: 1,
+  },
+  recipeItem: {
+    marginBottom: 20,
+  },
+  recipeTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  recipeIngredients: {
+    fontSize: 14,
+  },
 });

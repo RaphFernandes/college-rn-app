@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native"; 
 import { View, Text, TouchableOpacity, Alert } from "react-native";
 import { Link } from "@react-navigation/native";
 import Input from "../components/Input";
 import { styles } from "../styles";
 
-export default function Login({ navigation }) {
+export default function Login({ setIsLoggedIn }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const navigation = useNavigation();
 
   const handleEmailChange = (value) => {
     if (errorMessage?.toLowerCase()?.includes("e-mail")) {
@@ -36,12 +38,9 @@ export default function Login({ navigation }) {
         setErrorMessage("Senha não pode estar vazia");
         return;
       }
-  
-    Alert.alert("Login bem sucedido");
+    setIsLoggedIn(true);
     setEmail("");
     setPassword("");
-
-    navigation.navigate("Home");
   };
 
   return (
@@ -66,13 +65,13 @@ export default function Login({ navigation }) {
       />
 
       <View style={styles.wrapper}>
-        <Link style={styles.link} to="/ForgotPassword">
+        <Link style={styles.link} to="/Esqueci Minha Senha">
           Esqueci minha senha.
         </Link>
       </View>
 
       <View style={styles.wrapper}>
-        <Link style={styles.link} to="/Register">
+        <Link style={styles.link} to="/Registrar Usuários">
           Cadastre-se
         </Link>
       </View>
